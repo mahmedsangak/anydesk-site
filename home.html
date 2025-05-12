@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome Mahmoud</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "index.html";
+      }
+    });
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, Mahmoud Mohamed Mahmoud! 👋</h1>
+    <img src="mahmoud.jpg" alt="Mahmoud" class="profile-img">
+    <p>Click the button below to download AnyDesk</p>
+    <a href="appdownloud.exe" download class="download-btn">⬇️ Download AnyDesk</a>
+    <div class="instructions">
+      <p>بعد ما تنزله يا محمود، شغله وابعتيلي الكود اللي هيطلع.</p>
+      <p>أنا هقدر أتحكم في جهازك من هنا، بس متقلقش أنا تمام 😎</p>
+      <p>لو ظهرتلك أي رسالة دوس Accept وخليك متابع معايا.</p>
+    </div>
+
+    <!-- زر تسجيل الخروج -->
+    <button onclick="logout()" style="margin-top: 30px; padding: 10px 20px; border: none; border-radius: 8px; background-color: red; color: white; cursor: pointer;">
+      Logout
+    </button>
+  </div>
+</body>
+</html>
